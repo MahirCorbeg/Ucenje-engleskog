@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerija</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0044cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+    }
+
+    .gallery-item p {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      width: 21px;
+      height: 4px;
+      background-color: #000;
+      margin: 5px 0;
+    }
+
+    @media (min-width: 769px) {
+      .hamburger div {
+        width: 80px;
+        height: 10px;
+        margin: 15px 0;
+      }
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 35%;
+      height: 70%;
+      background-color: #d3d3d3;
+      padding: 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.show {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: left;
+      font-size: 2em;
+      border-bottom: 2px solid #0044cc;
+      padding-bottom: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .side-menu a:hover {
+      background-color: #0044cc;
+      color: white;
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+      .side-menu a {
+        font-size: 0.8em;
+      }
+
+      .side-menu {
+        width: 25%;
+        height: 100%;
+      }
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Galerija</h1>
+    <p>Inspiracija i učenje kroz slike</p>
+  </header>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="pocetna.html">Početna</a>
+    <a href="Chat-Talk.html">Chat/Talk</a>
+    <a href="o-nama.html">O nama</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="galerija.html">Galerija</a>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="galerija1.png" alt="Motivacija">
+      <p>"The limits of my language..."</p>
+    </div>
+    <div class="gallery-item">
+      <img src="galerija2.png" alt="Vokabular">
+      <p>Vizualni rječnik: kuća, stol, knjiga...</p>
+    </div>
+    <div class="gallery-item">
+      <img src="galerija3.png" alt="Aplikacije">
+      <p>Duolingo u akciji</p>
+    </div>
+    <div class="gallery-item">
+      <img src="galerija4.png" alt="Citati">
+      <p>"Practice makes perfect"</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Učenje Engleskog Jezika | Mahir Čorbeg</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

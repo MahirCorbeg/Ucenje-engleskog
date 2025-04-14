@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nama</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0044cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section {
+      background-image: url('pozadina3.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .info {
+      background-color: #87CEEB;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      width: 21px;
+      height: 4px;
+      background-color: #000000;
+      margin: 5px 0;
+    }
+
+    @media (min-width: 769px) {
+      .hamburger div {
+        width: 80px;
+        height: 10px;
+        margin: 15px 0;
+      }
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 35%;
+      height: 70%;
+      background-image: url('meni-pozadina.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.show {
+      right: 0;
+    }
+.side-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 2em;
+  border-bottom: 2px solid #0044cc;
+  padding-bottom: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+    .side-menu a:hover {
+      background-color: #0044cc;
+      color: white;
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+      .side-menu a {
+        font-size: 0.8em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .side-menu {
+        width: 25%;
+        height: 100%;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>O nama</h1>
+    <p>Ko stoji iza ove stranice i zašto?</p>
+  </header>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="pocetna.html">Početna</a>
+    <a href="Chat-Talk.html">Chat/Talk</a>
+    <a href="o-nama.html">O nama</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="galerija.html">Galerija</a>
+  </div>
+
+  <div class="section">
+    <div class="info">
+  <p>Stranica <strong>"Učenje Engleskog Jezika"</strong> nastala je kao rezultat zajedničke ideje i entuzijazma grupe zaljubljenika u jezike, edukaciju i moderne alate za učenje. Naš cilj je bio jednostavan – stvoriti online prostor koji je jasan, pristupačan i zaista koristan svima koji žele unaprijediti svoje znanje engleskog jezika.</p>
+
+  <p>Stranicu održava i razvija <strong>Mahir Čorbeg</strong> iz <strong>Novog Travnika</strong>, koji koordinira sadržaj, dizajn i preporuke. Njegovo iskustvo u učenju jezika i korištenju raznih online resursa čini temelj ove platforme.</p>
+
+  <p>Vjerujemo da uz prave alate, podršku i motivaciju, svako može učiti uspješno i sa zadovoljstvom – bez stresa i komplikacija. Zato ovdje dijelimo provjerene aplikacije, kurseve, rječnike i savjete koji su pomogli i nama, i mnogim drugima.</p>
+
+  <p><strong>Email:</strong> <a href="mailto:mahir.dtrix@gmail.com">mahir.dtrix@gmail.com</a></p>
+  <p><strong>Grad:</strong> Novi Travnik</p>
+  <p><strong>Država:</strong> Bosna i Hercegovina</p>
+</div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Učenje Engleskog Jezika | Mahir Čorbeg</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat / Talk</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      background-image: url('chat-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: #0044cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #0044cc;
+      margin-bottom: 20px;
+    }
+
+    .app-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    .app-card h3 {
+      margin-top: 0;
+      color: #0044cc;
+    }
+
+    .app-card a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #0044cc;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .app-card a:hover {
+      background-color: #002b80;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      width: 21px;
+      height: 4px;
+      background-color: #000000;
+      margin: 5px 0;
+    }
+
+    @media (min-width: 769px) {
+      .hamburger div {
+        width: 80px;
+        height: 10px;
+        margin: 15px 0;
+      }
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 35%;
+      height: 70%;
+      background-image: url('meni-pozadina.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.show {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: left;
+      font-size: 2em;
+      border-bottom: 2px solid #0044cc;
+      padding-bottom: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+    }
+
+    .side-menu a:nth-child(1) { color: #000000; }
+    .side-menu a:nth-child(2) { color: #0044cc; }
+    .side-menu a:nth-child(3) { color: #006400; }
+    .side-menu a:nth-child(4) { color: #cc5500; }
+    .side-menu a:nth-child(5) { color: #800080; }
+
+    .side-menu a:hover {
+      background-color: #0044cc;
+      color: white;
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+      .side-menu a {
+        font-size: 0.8em;
+      }
+
+      .side-menu {
+        width: 25%;
+        height: 100%;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Chat / Talk</h1>
+    <p>Vježbaj engleski kroz razgovor, aplikacije i kvalitetan sadržaj</p>
+  </header>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="pocetna.html">Početna</a>
+    <a href="Chat-Talk.html">Chat/Talk</a>
+    <a href="o-nama.html">O nama</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="galerija.html">Galerija</a>
+    
+  </div>
+  <div class="section">
+    <h2>Aplikacije za razgovor</h2>
+
+    <div class="app-card">
+      <h3>Praktika AI</h3>
+      <p>Vježbaj govor s AI tutorima kroz realne konverzacije i simulacije.</p>
+      <a href="https://play.google.com/store/apps/details?id=ai.praktika" target="_blank">Instaliraj</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Tandem</h3>
+      <p>Razgovaraj s ljudima širom svijeta koji uče tvoj jezik dok ti učiš njihov.</p>
+      <a href="https://play.google.com/store/apps/details?id=net.tandem" target="_blank">Instaliraj</a>
+    </div>
+
+    <div class="app-card">
+      <h3>HelloTalk</h3>
+      <p>Uči jezik kroz chat, pozive i ispravke od izvornog govornika.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.hellotalk" target="_blank">Instaliraj</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Speaky</h3>
+      <p>Pronađi jezičkog partnera i vježbaj govor putem dopisivanja i poziva.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.speaky" target="_blank">Instaliraj</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Lingbe</h3>
+      <p>Pričaj odmah s izvornim govornicima — samo klikni i pričaj.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.lingbe.app" target="_blank">Instaliraj</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>YouTube kanali za učenje</h2>
+
+    <div class="app-card">
+      <h3>English Addict with Mr. Steve</h3>
+      <p>Praktični engleski uz odličnog britanskog profesora. Prirodno i zanimljivo.</p>
+      <a href="https://www.youtube.com/@SpeakEnglishWithMrSteve" target="_blank">Posjeti kanal</a>
+    </div>
+
+    <div class="app-card">
+      <h3>BBC Learning English</h3>
+      <p>Vrhunski sadržaj od početnog do naprednog nivoa, sa objašnjenjima i testovima.</p>
+      <a href="https://www.youtube.com/user/bbclearningenglish" target="_blank">Posjeti kanal</a>
+    </div>
+
+    <div class="app-card">
+      <h3>EnglishClass101</h3>
+      <p>Kratki i korisni videi o svakodnevnim izrazima, gramatici i kulturi jezika.</p>
+      <a href="https://www.youtube.com/user/ENGLISHCLASS101" target="_blank">Posjeti kanal</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Aplikacije za vježbanje jezika</h2>
+
+    <div class="app-card">
+      <h3>Duolingo</h3>
+      <p>Jednostavno i zabavno učenje jezika sa svakodnevnim zadacima i bodovima.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.duolingo" target="_blank">Instaliraj</a>
+    </div>
+
+    <div class="app-card">
+      <h3>LingQ</h3>
+      <p>Uči kroz slušanje i čitanje stvarnih materijala. Pogodno za naprednije korisnike.</p>
+      <a href="https://play.google.com/store/apps/details?id=lp.lingq.app" target="_blank">Instaliraj</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Memrise</h3>
+      <p>Učenje vokabulara kroz kontekst, slike i video — vrlo zabavno i korisno.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.memrise.android.memrisecompanion" target="_blank">Instaliraj</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Online rječnici i alati</h2>
+
+    <div class="app-card">
+      <h3>Cambridge Dictionary</h3>
+      <p>Rječnik sa izgovorom, primjerima i gramatičkim objašnjenjima.</p>
+      <a href="https://dictionary.cambridge.org/" target="_blank">Otvori rječnik</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Oxford Learner's Dictionary</h3>
+      <p>Idealan za učenike engleskog, sa pojednostavljenim definicijama.</p>
+      <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank">Otvori rječnik</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Grammarly</h3>
+      <p>Alat za ispravku pisanja na engleskom — odličan za email i eseje.</p>
+      <a href="https://www.grammarly.com/" target="_blank">Posjeti sajt</a>
+    </div>
+
+    <div class="app-card">
+      <h3>Reverso</h3>
+      <p>Prevodi s kontekstom, primjeri rečenica i sinonimi — odlično za učenike.</p>
+      <a href="https://www.reverso.net/" target="_blank">Posjeti sajt</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Učenje Engleskog Jezika | Mahir Čorbeg</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
